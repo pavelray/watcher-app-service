@@ -32,6 +32,7 @@ const start = () => {
     }
     fastify.log.info(`Server ready at: ${address}`);
   });
+  return fastify;
 };
 
 if (require.main === module) {
