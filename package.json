@@ -6,19 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/aws-lambda": "^4.0.0",
     "@fastify/routes": "^5.1.0",
     "camelcase": "^8.0.0",
     "dotenv": "^16.3.1",
+    "dotenv-safe": "^8.2.0",
     "fastify": "^4.25.2",
     "fastify-swagger": "^5.2.0",
+    "netlify-lambda": "^2.0.16",
     "node-fetch": "^2.7.0",
     "pino-pretty": "^10.3.1",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"

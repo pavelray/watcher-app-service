@@ -11,7 +11,7 @@ const envToLogger = {
   production: true,
   test: false,
 };
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 const environment = process.env.ENVIRONMENT;
 
@@ -34,4 +34,10 @@ const start = () => {
   });
 };
 
-start();
+if (require.main === module) {
+  // called directly i.e. "node app"
+  start();
+} else {
+  // required as a module => executed on aws lambda
+  module.exports = start;
+}
